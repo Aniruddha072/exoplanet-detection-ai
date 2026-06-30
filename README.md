@@ -1,8 +1,8 @@
 # Exoplanet Detection AI
 
-An AI-powered system for detecting exoplanets from noisy astronomical light curve data.
+An AI/ML project for detecting exoplanets from stellar light curves using data from the Kepler Space Telescope.
 
-This project explores machine learning techniques for identifying exoplanet transit signals from stellar brightness measurements.
+The objective is to identify subtle transit patterns in noisy astronomical observations and build machine learning models capable of distinguishing stars that host exoplanets from those that do not.
 
 ---
 
@@ -12,100 +12,65 @@ This project explores machine learning techniques for identifying exoplanet tran
 exoplanet-detection-ai/
 │
 ├── data/
-│   ├── raw/                # Original dataset (not tracked by Git)
-│   └── processed/          # Processed datasets (not tracked by Git)
+│   ├── raw/
+│   └── processed/
 │
 ├── notebooks/
-│   ├── 01_positive_samples.ipynb
-│   └── 02_preprocessing.ipynb
+│   ├── 01_dataset_exploration.ipynb
+│   └── 03_signal_analysis.ipynb
 │
 ├── src/
-│   └── visualization/
-│       └── lightcurve_plots.py
+│   ├── preprocessing/
+│   ├── visualization/
+│   └── features/
 │
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
 ## Dataset
 
-Dataset used:
+This project uses the publicly available Kepler Exoplanet dataset.
 
-- Kepler Exoplanet Search Dataset
-- Training Set: 5,087 stars
-- Test Set: 570 stars
-- Features: 3,197 flux measurements per star
+Due to GitHub file size limitations, the dataset is not included in this repository.
 
-Labels:
+Place the dataset files inside:
 
-| Original | Meaning |
-|-----------|----------|
-| 1 | No Exoplanet |
-| 2 | Exoplanet |
+```text
+data/raw/
+```
 
-After preprocessing:
+Expected files:
 
-| Converted | Meaning |
-|-----------|----------|
-| 0 | No Exoplanet |
-| 1 | Exoplanet |
+```text
+exoTrain.csv
+exoTest.csv
+```
 
 ---
 
-## Progress
-
-### Phase 1 — Data Exploration ✅
-
-- Loaded train and test datasets
-- Inspected dataset structure
-- Visualized positive samples
-- Identified extreme flux outliers
-- Investigated class imbalance
-
-### Phase 2 — Data Preprocessing ✅
-
-- Separated features and labels
-- Converted labels to binary
-- Investigated outliers
-- Applied feature standardization
-- Compared signals before and after scaling
-- Saved processed datasets
-
-### Upcoming Phases
-
-- Exploratory Signal Analysis
-- Feature Engineering
-- Classical Machine Learning Models
-- Deep Learning Models
-- Model Evaluation & Comparison
-
----
-
-## Installation
+## Setup
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/Aniruddha072/exoplanet-detection-ai.git
-
 cd exoplanet-detection-ai
 ```
 
-Create virtual environment:
+Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 ```
 
-Activate environment:
-
 ### Windows
 
 ```bash
-.\.venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 ### Linux / macOS
@@ -130,34 +95,40 @@ Launch Jupyter Notebook:
 jupyter notebook
 ```
 
-Open:
+Open the notebooks directory and run the notebooks in sequence:
 
-```text
-notebooks/01_positive_samples.ipynb
-```
-
-or
-
-```text
-notebooks/02_preprocessing.ipynb
-```
-
-and run the cells sequentially.
+1. `01_dataset_exploration.ipynb`
+2. `03_signal_analysis.ipynb`
 
 ---
 
-## Notes
+## Current Progress
 
-Large datasets and processed files are excluded from Git tracking using `.gitignore`.
+### Completed
 
-Expected data location:
+- Dataset exploration and inspection
+- Data preprocessing and normalization
+- Exploratory signal analysis
+- Positive vs negative light curve comparison
+- Average light curve analysis
+- Variability analysis
+- PCA-based visualization
 
-```text
-data/
-├── raw/
-│   ├── exoTrain.csv
-│   └── exoTest.csv
-└── processed/
-```
+### Next Steps
+
+- Statistical feature extraction
+- Frequency-domain analysis
+- Machine learning model development
+- Model evaluation and comparison
+
+---
+
+## Objectives
+
+- Analyze stellar light curves
+- Detect exoplanet transit patterns
+- Engineer informative signal features
+- Train and evaluate classification models
+- Improve detection performance on highly imbalanced data
 
 ---
