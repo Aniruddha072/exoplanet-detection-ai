@@ -3,6 +3,7 @@ data/raw/*.csv
 
 # Processed data
 data/processed/
+*.npy
 
 # Python
 __pycache__/
